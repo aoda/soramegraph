@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>Aaatxt1.html</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Servlets -->
+<!-- 
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>aaatxt.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+ -->
+  <servlet>
+    <servlet-name>aaaTextLogicServlet</servlet-name>
+    <servlet-class>aaatxt.server.AaaTextLogicServletImpl</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>devfest</servlet-name>
+    <servlet-class>aaatxt.server.DevFest</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>soramegraph</servlet-name>
+    <servlet-class>aaatxt.server.Twitter4jtest</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>soramegraphAjax</servlet-name>
+    <servlet-class>aaatxt.server.NetworkAjax</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>soramePersist</servlet-name>
+    <servlet-class>aaatxt.server.SoramePersist</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>sorameStatistics</servlet-name>
+    <servlet-class>aaatxt.server.SorameStatisticsAjax</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>autocomplete</servlet-name>
+    <servlet-class>aaatxt.server.Autocomplete</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>kebun</servlet-name>
+    <servlet-class>aaatxt.server.Kebun</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>_ah_sessioncleanup</servlet-name>
+    <servlet-class>com.google.apphosting.utils.servlet.SessionCleanupServlet</servlet-class>
+  </servlet> 
+
+  <servlet>
+    <servlet-name>remote_api</servlet-name>
+    <servlet-class>com.google.apphosting.utils.remoteapi.RemoteApiServlet</servlet-class>
+  </servlet>
+
+  <!-- 
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/aaatxt1/greet</url-pattern>
+  </servlet-mapping>
+ -->
+  <servlet-mapping>
+    <servlet-name>aaaTextLogicServlet</servlet-name>
+    <url-pattern>/aaatxt1/aaaLogic</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>soramegraph</servlet-name>
+    <url-pattern>/soramegraph</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>soramegraphAjax</servlet-name>
+    <url-pattern>/soramegraph/network.xml</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>soramePersist</servlet-name>
+    <url-pattern>/soramePersist</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>sorameStatistics</servlet-name>
+    <url-pattern>/sorameStatistics</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>devfest</servlet-name>
+    <url-pattern>/devfest/henkan</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>autocomplete</servlet-name>
+    <url-pattern>/soramegraph/autocomplete</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>kebun</servlet-name>
+    <url-pattern>/kebun</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>_ah_sessioncleanup</servlet-name>
+    <url-pattern>/_ah/sessioncleanup</url-pattern>
+  </servlet-mapping> 
+
+  <servlet-mapping>
+    <servlet-name>remote_api</servlet-name>
+    <url-pattern>/remote_api</url-pattern>
+  </servlet-mapping> 
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>session-cleanup</web-resource-name>
+      <url-pattern>/_ah/sessioncleanup</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint> 
+
+</web-app>

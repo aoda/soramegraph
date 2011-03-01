@@ -1,0 +1,35 @@
+/* The Cytoscape Web container must have its
+               dimensions set. */
+html,body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-image: url(100.png);
+	background-repeat: repeat-x;
+	background-color: #F9FCFC;
+}
+
+#desc {
+	font-size: 80%;
+	color: #555555;
+}
+
+#cytoscapeweb {
+	/* width: 100%; */ 
+	height: 100%;
+	margin: 0em 5em 0em 5em;
+}
+#q {
+	height: 25px;
+	font-size: 18px;
+}
+a {text-decoration: underline;}
+a img {border: none;}
+.warn  {color: red;}
+#footer {
+	background-image: url(120.png);
+	background-repeat: repeat-x;
+}

@@ -1,0 +1,6 @@
+<%@ page language="java" contentType="text/xml; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<jsp:useBean id="val" type="java.util.List" scope="request"/>
+<%@page import="java.util.Set"%>
+<graphml><key id="label" for="all" attr.name="label" attr.type="string"/><key id="url" for="all" attr.name="url" attr.type="string"/><key id="fromUser" for="all" attr.name="fromUser" attr.type="string"/><key id="profileImageUrl" for="all" attr.name="profileImageUrl" attr.type="string"/>
+<graph edgedefault="directed"><% Set<String> set = new java.util.HashSet<String>();	for (java.util.Iterator<aaatxt.model.Edge> iterator = val.iterator(); iterator.hasNext();) {aaatxt.model.Edge e = (aaatxt.model.Edge) iterator.next(); %><% if (!set.contains(e.getStart())) { %> <node id="<%= e.getStart() %>"><data key="label"><%= e.getStart() %></data></node><% set.add(e.getStart().toString());}%><% if (!set.contains(e.getEnd())) { %> <node id="<%= e.getEnd() %>"><data key="label"><%= e.getEnd() %></data></node><% set.add(e.getEnd().toString()); }%><edge target="<%= e.getEnd() %>" source="<%= e.getStart() %>"><data key="label"><%= e.getTweet() %></data><data key="url"><%= e.getUrl() %></data><data key="profileImageUrl"><%= e.getProfileImageUrl() %></data><data key="fromUser"><%= e.getFromUser() %></data></edge><%}%></graph></graphml>
